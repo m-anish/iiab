@@ -1,0 +1,14 @@
+Alias {{ youphptube_url }} {{ doc_root }}/{{ youphptube_directory }}
+Alias {{ youphptube_encoder_url }} {{ doc_root }}/{{ youphptube_encoder_directory }}
+
+<Directory {{ doc_root }}/{{ youphptube_directory }}/>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+
+<Directory {{ doc_root }}/{{ youphptube_encoder_directory }}/>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>

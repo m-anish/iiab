@@ -330,6 +330,8 @@ pbx_data_ports: "10000:20000"
 wordpress_install: False
 wordpress_enabled: False
 
+youphptube_install: False
+youphptube_enabled: False
 
 # 7-EDU-APPS
 

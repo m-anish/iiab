@@ -1,0 +1,5 @@
+- name: Install youphptube if youphptube_install is true
+  include_tasks: install.yml
+  when: youphptube_install
+
+

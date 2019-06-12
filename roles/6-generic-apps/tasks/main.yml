@@ -75,6 +75,12 @@
   when: wordpress_install | bool
   tags: wordpress
 
+- name: YOUPHPTUBE
+  include_role:
+    name: youphptube
+  when: youphptube_install | bool
+  tags: youphptube
+
 - name: Recording STAGE 6 HAS COMPLETED ====================
   lineinfile:
     dest: "{{ iiab_env_file }}"

@@ -219,6 +219,8 @@ asterisk_chan_dongle: False
 wordpress_install: False
 wordpress_enabled: False
 
+youphptube_install: False
+youphptube_enabled: False
 
 # 7-EDU-APPS
 
