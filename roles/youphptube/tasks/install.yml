@@ -6,27 +6,39 @@
     - sudo
     - python-mysqldb
 
-#- name: create youPHPtube database
-#  mysql_db: db=youPHPTube state=present
-#
-#- name: create user youphptube
-#  mysql_user: 
-#    name: youphptube
-#    password: passw0rd
-#    priv: 'youPHPTube.*:ALL,GRANT'
-#    host: localhost
-#    state: present
-#
-#- name: create youPHPTubeEncoder database
-#  mysql_db: db=youPHPTube-Encoder state=present
-#
-#- name: create user youPHPTubeEncoder
-#  mysql_user: 
-#    name: youphptubeencoder
-#    password: passw0rd
-#    priv: 'youPHPTube-Encoder.*:ALL,GRANT'      
-#    host: localhost
-#    state: present
+- name: create youPHPtube database
+  mysql_db: 
+    db: youPHPTube 
+    state: present
+    login_user: root
+    login_password: '{{ mysql_root_password }}'
+
+- name: create user youphptube
+  mysql_user: 
+    name: youphptube
+    password: passw0rd
+    priv: 'youPHPTube.*:ALL,GRANT'
+    host: localhost
+    state: present
+    login_user: root
+    login_password: '{{ mysql_root_password }}'
+
+- name: create youPHPTubeEncoder database
+  mysql_db: 
+    db: youPHPTube-Encoder 
+    state: present
+    login_user: root
+    login_password: '{{ mysql_root_password }}'
+
+- name: create user youPHPTubeEncoder
+  mysql_user: 
+    name: youphptubeencoder
+    password: passw0rd
+    priv: 'youPHPTube-Encoder.*:ALL,GRANT'      
+    host: localhost
+    state: present
+    login_user: root
+    login_password: '{{ mysql_root_password }}'
 
 - name: install packages
   apt: name={{ item }} state=present
